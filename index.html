@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Galeria HTML - CSS - JS</title>
+	<style type="text/css">
+		
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		.carrusel{
+			width: 500;
+			height: 600px;
+			
+			overflow: hidden;
+		}
+
+		.carrusel__lienzo{
+			display: flex;
+		}
+
+		.carrusel__img{
+			width: 100%;
+			height: 600px;
+		}
+
+
+
+	</style>
+</head>
+<body>
+
+	<div class="carrusel" id="carrusel">
+
+		<div class="carrusel__lienzo" id="lienzo">
+			
+			<img class="carrusel__img" src="https://fondosmil.com/fondo/28971.jpg" />
+			<img class="carrusel__img" src="https://wallpapershome.com/images/pages/pic_h/15074.jpg" />
+			<img class="carrusel__img" src="https://cdn.mos.cms.futurecdn.net/QFuzEB2Gxth6qQT8Tpe7LN.jpg" />
+			<img class="carrusel__img" src="https://cosasbucket.s3.amazonaws.com/wp-content/uploads/2019/05/24171213/ENDGAME.jpg" />
+			<img class="carrusel__img" src="https://i.insider.com/54ee1ae66bb3f7a368fb10ea?width=1200&format=jpeg" />
+			<img class="carrusel__img" src="https://s1.1zoom.me/big0/925/Heroes_comics_Captain_America_hero_Iron_Man_hero_567889_1280x535.jpg" />
+			<img class="carrusel__img" src="https://www.allcitycanvas.com/wp-content/uploads/2019/07/comics-de-marvel-ahora-en-audiolibros-horizontal.jpg" />
+			<img class="carrusel__img" src="https://push-2739.5centscdn.com/http/warcraft/uploads/2018/04/avengers-infinity-war-horizontal.jpeg" />
+
+		</div>
+
+	</div>
+
+	<script type="text/javascript" src="index.js"></script>
+	<script type="text/javascript">
+		
+		images.forEach((img)=>{
+			img.style.minWidth=window.innerWidth+"px"
+		})
+
+		iniciarAnimacion()
+		
+
+		carrusel.addEventListener("mousedown",	iniArrastre	)
+		carrusel.addEventListener("mousemove",	arrastre)
+		carrusel.addEventListener("mouseup",	finArrastre)
+		carrusel.addEventListener("mouseleave",	finArrastre)
+
+
+		carrusel.addEventListener("touchstart", iniArrastre	)
+		carrusel.addEventListener("touchmove", arrastre)
+		carrusel.addEventListener("touchend", finArrastre)
+
+		carrusel.addEventListener("dragstart",(event)=>{
+			event.preventDefault()
+		})
+		
+
+	</script>
+</body>
+</html>
